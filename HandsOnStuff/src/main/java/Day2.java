@@ -11,7 +11,7 @@ public class Day2 {
         for (; ; ) {
             System.out.println(
                     "1. find biggest of 3 numbers\n" +
-                    "2. display list of ascending numbers\n" +
+                    "2. display incremental/decremental list of numbers\n" +
                     "3. add two numbers\n"+
                     "4. add n numbers\n"
             );
@@ -62,10 +62,9 @@ public class Day2 {
         }
 
         int getSum(){
-            Node clone = head;
+            Node clone = new Node(0, head);
             int sum = 0;
-            if(head != null) do sum+= clone.data;
-            while((clone = clone.next) != null);
+            while((clone = clone.next) != null)sum += clone.data;
             return sum;
         }
 
